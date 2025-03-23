@@ -1,28 +1,20 @@
-## Usage
+# IBW Calculator 2.0
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+理想体重(IBW)をディヴァインの公式に基づいて計算する簡素なWebアプリです.
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+アイコンはすべてBootstrap Iconsを利用しています.
 
-## Available Scripts
+# 使い方
+1. 性別ボタンから, 性別を選択する(デフォルトは男性です)
+2. キーパッドで身長を入力する. (左下のキーボードアイコンから, キーボードモードを利用できます)
+3. ↩をクリック, またはキーボードモードの場合はEnter/決定 を利用すると, 計算結果が表示されます.
+4. PCの場合は画面右, モバイルの場合は右上の履歴アイコンから, 計算履歴が確認できます(セッションを閉じると破棄されます.)
 
-In the project directory, you can run:
+### キーボードモード
+左下のキーボードアイコンから, キーボードモードを利用できます.
+モバイルデバイスの場合, ソフトウェアキーボードを起動します.
 
-### `npm run dev`
+PCの場合はキーボードを利用できます.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
-
-Learn more about deploying your application with the [documentations](https://vite.dev/guide/static-deploy.html)
+# ライセンス
+[MIT](./LICENSE)ライセンスです.
