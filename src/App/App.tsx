@@ -1,35 +1,42 @@
-import { createSignal } from 'solid-js'
-import solidLogo from '../assets/solid.svg'
-import viteLogo from '/vite.svg'
-import './App.module.scss'
+import style from './App.module.scss'
+import Header from "Global/components/header/Header";
+import CalcForm from "Pages/calcForm/CalcForm.tsx";
+import Result from "Pages/result/Result.tsx";
+import {Transition} from "solid-transition-group";
+import {Show} from "solid-js";
+import {showResult} from "Global/states/showResult/showResult.ts";
+import History from "Pages/history/History.tsx";
+import HistoryPopup from "Global/components/HistoryPopup/HistoryPopup.tsx";
+import exitAnimation from "Global/utils/exitAnim/exitAnimation.ts";
+import {showHistoryPopup} from "Global/states/showHistoryPopup/showHistoryPopup.ts";
 
 function App() {
-  const [count, setCount] = createSignal(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://solidjs.com" target="_blank">
-          <img src={solidLogo} class="logo solid" alt="Solid logo" />
-        </a>
-      </div>
-      <h1>Vite + Solid</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count()}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p class="read-the-docs">
-        Click on the Vite and Solid logos to learn more
-      </p>
-    </>
-  )
+
+    
+    return (
+        <div class={style.app}>
+            <Header/>
+            <div class={style.main}>
+                <div class={style.leftPanel}>
+                    <CalcForm/>
+                    <Transition onExit={exitAnimation}>
+                        <Show when={showResult()}>
+                            <Result/>
+                        </Show>
+                    </Transition>
+                </div>
+                <div class={style.rightPanel}>
+                    <History/>
+                </div>
+                <Transition onExit={exitAnimation}>
+                    <Show when={showHistoryPopup()}>
+                        <HistoryPopup/>
+                    </Show>
+                </Transition>
+            </div>
+        </div>
+    )
 }
 
 export default App
