@@ -1,0 +1,40 @@
+﻿@use "Global/styles/mixin";
+
+.selector{
+    padding: 4px;
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 8px;
+}
+
+.inputArea{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color: mixin.$inputBackgroundPrimaryDark;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid mixin.$borderColorDark;
+
+    &::before{
+        content: "";
+        position: absolute;
+        height: calc(100% - 8px);
+        width: calc(50% - 8px);
+        border-radius: 4px;
+        background-color: mixin.$accentColorDark;
+        left: 4px;
+        transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    &[data-gender="1"]::before{
+        left: calc(50% + 4px);
+    }
+
+    button{
+        text-align: center;
+        z-index: 1;
+        transition: 0.2s;
+    }
+}

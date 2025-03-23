@@ -1,0 +1,33 @@
+﻿@use "Global/styles/mixin.scss";
+
+.header{
+    //height: 32px;
+    //background-color: mixin.$headerBackgroundDark;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 32px;
+    padding: 8px;
+    @media screen and (min-width: 720px) {
+        grid-template-columns: 1fr;
+        button{
+            display: none!important;
+        }
+    }
+
+    button{
+        display: flex;
+        height: 32px;
+        width: 32px;
+        align-items: center;
+        justify-content: center;
+        transition: 0.2s;
+        &:hover{
+            background-color: mixin.$inputBackgroundPrimaryDark;
+        }
+
+        &:active{
+            filter: brightness(0.75);
+        }
+    }
+
+}
