@@ -2,6 +2,8 @@
 import { render } from 'solid-js/web'
 import App from './App/App.tsx'
 
+import "Global/styles/style.scss";
+
 const root = document.getElementById('root')
 
 render(() => <App />, root!)
