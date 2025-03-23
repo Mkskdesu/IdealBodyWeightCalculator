@@ -1,0 +1,29 @@
+﻿$textColorDark: rgb(228, 245, 247);
+$headerBackgroundDark: rgb(45,45,50);
+$inputBackgroundPrimaryDark: rgb(45,45,45);
+$inputBackgroundSecondaryDark: rgb(65,65,70);
+$accentColorDark: rgb(53, 174, 187);
+$borderColorDark: rgb(160,160,160);
+$keypadButtonBackgroundDark: rgb(67,68,74,0.25);
+$overlayColorDark: rgb(20,20,30,0.5);
+$redColorDark: rgb(230, 72, 44);
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
