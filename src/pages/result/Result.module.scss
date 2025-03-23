@@ -1,0 +1,66 @@
+﻿@use "Global/styles/mixin";
+
+.result{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding: 8px;
+    z-index: 10;
+    display: grid;
+    grid-template-rows: 32px auto 1fr;
+
+    row-gap: 8px;
+    background-color: mixin.$overlayColorDark;
+    backdrop-filter: blur(16px);
+    animation: enter 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+    &[data-exit]{
+        animation: exit 0.3s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+
+    .backButton{
+        display: flex;
+        align-items: center;
+        column-gap: 4px;
+        background-color: mixin.$keypadButtonBackgroundDark;
+        transition: 0.2s;
+        &:hover{
+            column-gap: 8px;
+            filter: brightness(1.2);
+        }
+        &:active{
+            column-gap: 4px;
+            filter: brightness(0.75);
+        }
+    }
+}
+
+.data{
+    overflow: auto;
+    hr{
+        margin: 4px 0;
+    }
+}
+
+@keyframes enter {
+    from{
+        left: 24px;
+        opacity: 0;
+    }
+    to{
+        left: 0;
+        opacity: 1;
+    }
+}
+
+@keyframes exit {
+    from{
+        left: 0;
+        opacity: 1;
+    }
+    to{
+        left: -24px;
+        opacity: 0;
+    }
+}

@@ -1,0 +1,43 @@
+﻿@use "Global/styles/mixin";
+
+.history{
+    padding: 8px;
+
+    .list{
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+    }
+}
+
+.card{
+    position: relative;
+    display: grid;
+    grid-template-rows: 28px auto;
+    background-color: mixin.$inputBackgroundSecondaryDark;
+    border: 2px solid mixin.$borderColorDark;
+    border-radius: 8px;
+    overflow: hidden;
+    animation: enter 0.3s ease forwards;
+
+    .title{
+        background-color: mixin.$inputBackgroundPrimaryDark;
+        padding: 0 8px;
+    }
+    .result{
+        padding: 4px 8px;
+        font-size: 1.25em;
+        font-weight: bold;
+    }
+}
+
+@keyframes enter {
+    from{
+        opacity: 0;
+        left: 32px;
+    }
+    to{
+        opacity: 1;
+        left: 0;
+    }
+}
