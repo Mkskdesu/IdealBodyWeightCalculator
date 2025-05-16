@@ -1,5 +1,5 @@
 ﻿import style from "./HeightInput.module.scss";
-import {createSignal, For} from "solid-js";
+import {createSignal, For, onCleanup, onMount} from "solid-js";
 import range from "Global/utils/range/range.ts";
 import {BsArrowReturnLeft, BsKeyboard, BsBackspace} from "solid-icons/bs";
 import {setHeight} from "Global/states/heightState/heightState.ts";
@@ -11,6 +11,19 @@ export default () => {
 
     let numberInputRef: HTMLInputElement;
     const [dotFlag, setDotFlag] = createSignal(false);
+    
+    onMount(()=>{
+        //キーボードからの直接入力時にフォーカスする
+        window.addEventListener("keydown",handleKeyboardInput);
+    })
+    
+    onCleanup(()=>{
+        window.removeEventListener("keydown",handleKeyboardInput);
+    })
+    
+    function handleKeyboardInput(){
+        numberInputRef.focus();
+    }
 
     function handleNumber(num: number) {
         if (dotFlag()) {
@@ -60,7 +73,8 @@ export default () => {
                 <form onsubmit={handleEnter}>
                     <input class={style.numberInput} type="number"
                            step={0.1}
-                           ref={numberInputRef!}/>
+                           ref={numberInputRef!}
+                    />
                 </form>
                 <span>
                     {dotFlag() && "."}
