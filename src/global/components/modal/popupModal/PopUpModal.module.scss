@@ -28,7 +28,8 @@
 
 .inner {
     height: 50%;
-    width: 50%;
+    min-width: 50%;
+    max-width: calc(100% - 16px);
     background-color: mixin.$sectionBackground;
     padding: 8px;
     display: grid;
@@ -38,6 +39,9 @@
     box-shadow: 0 0 4px 2px mixin.$shadowColor;
     animation: slideUp 0.5s ease forwards;
     overflow: auto;
+    @media screen and (max-width: 720px) {
+        width: calc(100% - 16px);
+    }
 
     .title {
         display: grid;
@@ -46,6 +50,9 @@
 
         h2 {
             margin: 0;
+            white-space: nowrap;
+            overflow-x: auto;
+            overflow-y: hidden;
         }
 
         button {
