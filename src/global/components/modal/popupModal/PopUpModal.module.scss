@@ -11,6 +11,7 @@
     align-items: center;
     justify-content: center;
     animation: fadeIn 0.3s ease forwards;
+    z-index: 99;
 
     &.blur {
         backdrop-filter: blur(16px);
@@ -57,7 +58,7 @@
             transition: 0.2s;
 
             &:hover {
-                background-color: mixin.$warn;
+                background-color: mixin.$redColorDark;
             }
         }
     }
