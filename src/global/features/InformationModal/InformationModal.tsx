@@ -18,7 +18,10 @@ export default () => {
         <Transition onExit={exitModal}>
             <Show when={showInformationPopup()}>
                 <PopUpModal title={"理想体重計算機v2.0について"} hide={_=>setShowInformationPopup(false)} blur>
-                    <h3>Ver 2.0.2</h3>
+                    <h3>理想体重計算機 Ver 2.0.2 By Makisaka</h3>
+                    <a href="https://github.com/Mkskdesu/IdealBodyWeightCalculator">プロジェクトページ(GitHub)</a> <br/>
+                    <a href="https://github.com/Mkskdesu/IdealBodyWeightCalculator/issues/new">Issue, バグ報告</a> <br/>
+                    理想体重計算機は, MITライセンスによるオープンソースソフトウェアとして公開されています.
                 </PopUpModal>
             </Show>
         </Transition>
