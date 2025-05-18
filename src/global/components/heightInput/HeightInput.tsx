@@ -50,6 +50,10 @@ export default () => {
             numberInputRef.value = numberInputRef.value.slice(0, -1)
         }
     }
+    
+    function handleClear(){
+        numberInputRef.value = "";
+    }
 
     function toggleKeyboard() {
         //setShowKeyboard(p=>!p);
@@ -72,7 +76,7 @@ export default () => {
             <div class={style.input}>
                 <form onsubmit={handleEnter}>
                     <input class={style.numberInput} type="number"
-                           step={0.1}
+                           step={0.01}
                            ref={numberInputRef!}
                     />
                 </form>
@@ -89,8 +93,8 @@ export default () => {
                 </For>
                 <button class={style.enter} onClick={handleEnter}><BsArrowReturnLeft/></button>
                 <button onClick={handleDot}>.</button>
-                <div></div>
                 <button onClick={handleDelete}><BsBackspace/></button>
+                <button onClick={handleClear}>C</button>
                 <button onClick={toggleKeyboard}><BsKeyboard/></button>
 
             </div>
