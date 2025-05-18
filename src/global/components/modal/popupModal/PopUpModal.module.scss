@@ -1,0 +1,109 @@
+﻿@use "Global/styles/mixin";
+
+.modal {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease forwards;
+
+    &.blur {
+        backdrop-filter: blur(16px);
+    }
+
+    &.exit, &[data-exit="true"] {
+        animation: fadeOut 0.3s ease forwards;
+
+        .inner {
+            animation: slideDown 0.3s ease forwards;
+        }
+    }
+}
+
+.inner {
+    height: 50%;
+    width: 50%;
+    background-color: mixin.$sectionBackground;
+    padding: 8px;
+    display: grid;
+    grid-template-rows: 48px 1px 1fr 40px;
+    row-gap: 8px;
+    border-radius: 8px;
+    box-shadow: 0 0 4px 2px mixin.$shadowColor;
+    animation: slideUp 0.5s ease forwards;
+    overflow: auto;
+
+    .title {
+        display: grid;
+        grid-template-columns: 1fr 48px;
+        align-items: center;
+
+        h2 {
+            margin: 0;
+        }
+
+        button {
+            height: 50%;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            transition: 0.2s;
+
+            &:hover {
+                background-color: mixin.$warn;
+            }
+        }
+    }
+
+    hr {
+        margin: 0;
+    }
+}
+
+.buttons {
+    margin: -8px;
+    padding: 8px;
+    background-color: mixin.$inputBackgroundSecondaryDark;
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.btn{
+    text-align: center;
+    border-radius: 8px;
+    padding: 4px 8px;
+    margin: 8px 0;
+    background-color: mixin.$inputBackgroundPrimaryDark;
+    transition: 0.2s;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(24px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(24px);
+        opacity: 0;
+    }
+}
