@@ -6,7 +6,7 @@ import {Transition} from "solid-transition-group";
 import {Show} from "solid-js";
 import {showResult} from "Global/states/showResult/showResult.ts";
 import History from "Pages/history/History.tsx";
-import HistoryPopup from "Global/components/HistoryPopup/HistoryPopup.tsx";
+import HistoryPopup from "Global/features/historyPopup/HistoryPopup.tsx";
 import exitAnimation from "Global/utils/exitAnim/exitAnimation.ts";
 import {showHistoryPopup} from "Global/states/showHistoryPopup/showHistoryPopup.ts";
 
