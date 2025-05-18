@@ -9,6 +9,7 @@ import History from "Pages/history/History.tsx";
 import HistoryPopup from "Global/features/historyPopup/HistoryPopup.tsx";
 import exitAnimation from "Global/utils/exitAnim/exitAnimation.ts";
 import {showHistoryPopup} from "Global/states/showHistoryPopup/showHistoryPopup.ts";
+import InformationModal from "Global/features/InformationModal/InformationModal.tsx";
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
                         <HistoryPopup/>
                     </Show>
                 </Transition>
+                <InformationModal/>
             </div>
         </div>
     )
