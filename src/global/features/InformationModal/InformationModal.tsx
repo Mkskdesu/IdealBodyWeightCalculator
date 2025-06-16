@@ -5,6 +5,7 @@ import {
     showInformationPopup
 } from "Global/states/showInformationPopup/showInformationPopup.ts";
 import PopUpModal from "Global/components/modal/popupModal/PopUpModal.tsx";
+import {Show} from "solid-js";
 
 
 export default () => {
